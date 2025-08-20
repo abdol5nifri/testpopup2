@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>موقعي العصري</title>
-<!-- Open Graph Meta Tags لتحسين المشاركة على فيسبوك -->
+<!-- Open Graph Meta Tags كحل احتياطي -->
 <meta property="og:title" content="عنوان المقال">
 <meta property="og:description" content="هذا هو نص المقال التجريبي الذي يحتوي على حوالي 100 كلمة. اقرأ المزيد لمعرفة التفاصيل الشيقة!">
 <meta property="og:image" content="https://i.postimg.cc/7hmmBvsy/4873159.jpg">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://abdol5nifri.github.io/testpopup2/"> <!-- استبدل برابط موقعك الفعلي -->
+<meta property="og:url" content="https://yourwebsite.com/index.html"> <!-- استبدل برابط موقعك الفعلي -->
 <style>
   body { 
     font-family: Arial, sans-serif; 
@@ -126,7 +126,6 @@
   .ad .btn:hover {
     background: #e91e63;
   }
-  /* أنماط أزرار المشاركة */
   .share-buttons {
     margin: 20px 0;
     display: flex;
@@ -315,14 +314,14 @@
 </header>
 
 <div class="container">
-  <h1> عنوان المقال تحمميل متصفح الربح العملات</h1>
+  <h1>عنوان المقال</h1>
   <img src="https://i.postimg.cc/7hmmBvsy/4873159.jpg" alt="صورة المقال">
   <p>هذا هو نص المقال التجريبي الذي يحتوي على حوالي 100 كلمة. يمكن استبدال هذا النص بالمحتوى الحقيقي للمقال. الهدف هنا هو توفير تصميم عصري ومتجاوب مع مكان للإعلانات وسط المقالة.</p>
   <p>هذا هو نص المقال التجريبي الذي يحتوي على حوالي 100 كلمة. يمكن استبدال هذا النص بالمحتوى الحقيقي للمقال. الهدف هنا هو توفير تصميم عصري ومتجاوب مع مكان للإعلانات وسط المقالة.</p>
   <p>هذا هو نص المقال التجريبي الذي يحتوي على حوالي 100 كلمة. يمكن استبدال هذا النص بالمحتوى الحقيقي للمقال. الهدف هنا هو توفير تصميم عصري ومتجاوب مع مكان للإعلانات وسط المقالة.</p>
   <!-- أزرار المشاركة -->
   <div class="share-buttons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://abdol5nifri.github.io/testpopup2/" target="_blank">مشاركة على فيسبوك</a>
+    <a href="#" class="share-facebook">مشاركة على فيسبوك</a>
   </div>
   <div class="ad">
     <img src="https://i.postimg.cc/VsWYyCRN/accurate-marketing-strategy-content-creation-distribution-target-audience-identification-brand-promo.jpg" alt="صورة إعلان تجريبي">
@@ -345,10 +344,10 @@
   <p>نص إضافي لإكمال طول المقال ولتوضيح توزيع المحتوى على الصفحة بشكل متناسق، بحيث يظهر المحتوى بشكل جيد على جميع الأجهزة.</p>
   <p>نص إضافي لإكمال طول المقال ولتوضيح توزيع المحتوى على الصفحة بشكل متناسق، بحيث يظهر المحتوى بشكل جيد على جميع الأجهزة.</p>
   <p>نص إضافي لإكمال طول المقال ولتوضيح توزيع المحتوى على الصفحة بشكل متناسق، بحيث يظهر المحتوى بشكل جيد على جميع الأجهزة.</p>
-  <p>نص إضافي لإكمال طول المقال ولتوضيح توزيع المحتوى على الصفحة بشكل متناسق، بحيث يظهر المحتوى بل يظهر المحتوى بشكل جيد على جميع الأجهزة.</p>
-  <!-- أزرار المشاركة مرة أخرى في نهاية المقال -->
+  <p>نص إضافي لإكمال طول المقال ولتوضيح توزيع المحتوى على الصفحة بشكل متناسق، بحيث يظهر المحتوى بشكل جيد على جميع الأجهزة.</p>
+  <!-- أزرار المشاركة مرة أخرى -->
   <div class="share-buttons">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com/index.html" target="_blank">مشاركة على فيسبوك</a>
+    <a href="#" class="share-facebook">مشاركة على فيسبوك</a>
   </div>
   <a href="#" class="btn">تحميل</a>
 </div>
@@ -374,6 +373,7 @@
 </footer>
 
 <script>
+  // JavaScript للبوب اب
   const popupOverlay = document.getElementById('popupOverlay');
   const closePopup = document.getElementById('closePopup');
 
@@ -401,6 +401,23 @@
   closePopup.addEventListener('click', hidePopup);
   popupOverlay.addEventListener('click', (e) => {
     if (e.target === popupOverlay) hidePopup();
+  });
+
+  // JavaScript لزر المشاركة على فيسبوك
+  const shareButtons = document.querySelectorAll('.share-facebook');
+  shareButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      // جلب العنوان من h1
+      const title = document.querySelector('h1').textContent;
+      // جلب أول فقرة كوصف
+      const description = document.querySelector('.container p').textContent.substring(0, 100) + '...';
+      // رابط الصفحة الحالية
+      const url = window.location.href;
+      // رابط المشاركة على فيسبوك
+      const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(title + ' - ' + description)}`;
+      window.open(facebookShareUrl, '_blank');
+    });
   });
 </script>
 
